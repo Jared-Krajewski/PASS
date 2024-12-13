@@ -173,7 +173,7 @@ const AddContactModal = ({
       };
     } else {
       userObject = {
-        webId: JSON.parse(JSON.parse(JSON.stringify(ENV.VITE_OIDC_WEBIDS)))[Oidc].replace('user', userName.trim()).trim(),
+           webId: JSON.parse(JSON.parse(ENV.VITE_OIDC_WEBIDS))[Oidc].replace('user', userName.trim()).trim(),
         ...(addUserGivenName.value && { givenName: addUserGivenName.value.trim() }),
         ...(addUserFamilyName.value && { familyName: addUserFamilyName.value.trim() })
       };
