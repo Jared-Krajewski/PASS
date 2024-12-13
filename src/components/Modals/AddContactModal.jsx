@@ -82,7 +82,9 @@ const AddContactModal = ({
   const [oidcProviders] = useState([...ENV.VITE_SUGGESTED_OIDC_OPTIONS.split(', '), 'Other']);
   const [Oidc, setOIDC] = useState('');
   const [isSubmittable, setIsSubmittable] = useState(false);
-
+  
+  console.log(JSON.parse(ENV.VITE_OIDC_WEBIDS));
+  
   const parsePodUrl = () => {
     let oidcResult = '';
     let usernameResult = '';
