@@ -83,8 +83,6 @@ const AddContactModal = ({
   const [Oidc, setOIDC] = useState('');
   const [isSubmittable, setIsSubmittable] = useState(false);
   
-  console.log(JSON.parse(JSON.parse(ENV.VITE_OIDC_WEBIDS)));
-  
   const parsePodUrl = () => {
     let oidcResult = '';
     let usernameResult = '';
@@ -175,7 +173,7 @@ const AddContactModal = ({
       };
     } else {
       userObject = {
-        webId: JSON.parse(ENV.VITE_OIDC_WEBIDS)[Oidc].replace('user', userName.trim()).trim(),
+        webId: JSON.parse(JSON.parse(ENV.VITE_OIDC_WEBIDS))[Oidc].replace('user', userName.trim()).trim(),
         ...(addUserGivenName.value && { givenName: addUserGivenName.value.trim() }),
         ...(addUserFamilyName.value && { familyName: addUserFamilyName.value.trim() })
       };
