@@ -121,7 +121,7 @@ const AddContactModal = ({
   // Defaults oidc dropdown to use opencommons
   useEffect(() => {
     if (showAddContactModal) {
-      setOIDC(oidcProviders[1]);
+      setOIDC(oidcProviders[0]);
     } else {
       setOIDC('');
     }
