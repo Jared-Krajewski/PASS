@@ -54,7 +54,17 @@ const NavbarDesktop = ({ setShowConfirmation }) => {
       <AppBar position="static" color="primary">
         <Toolbar sx={{ minHeight: '64px' }}>
           <Link to="/" aria-label="Home">
-            <img src="/pass-logo.png" alt="PASS logo" style={{ marginRight: '2rem' }} />
+                   <img
+              src="/assets/PASSLogodarkmode.png"
+              alt="PASS logo"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                marginRight: '2rem',
+                maxHeight: '48px',
+                width: 'auto'
+              }}
+            />
           </Link>
           <NavbarLinks aria-label="navigation links" />
           <Box sx={{ flexGrow: 1 }} />

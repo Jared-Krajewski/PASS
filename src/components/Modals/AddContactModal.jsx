@@ -82,7 +82,7 @@ const AddContactModal = ({
   const [oidcProviders] = useState([...ENV.VITE_SUGGESTED_OIDC_OPTIONS.split(', '), 'Other']);
   const [Oidc, setOIDC] = useState('');
   const [isSubmittable, setIsSubmittable] = useState(false);
-  
+
   const parsePodUrl = () => {
     let oidcResult = '';
     let usernameResult = '';
@@ -118,6 +118,14 @@ const AddContactModal = ({
     setOIDC(oidcResult);
     setUserName(usernameResult);
   };
+  // Defaults oidc dropdown to use opencommons
+  useEffect(() => {
+    if (showAddContactModal) {
+      setOIDC(oidcProviders[1]);
+    } else {
+      setOIDC('');
+    }
+  }, [showAddContactModal, oidcProviders]);
 
   useEffect(() => {
     // Disables submit button if form not fully filled out

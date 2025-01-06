@@ -27,7 +27,7 @@ import { ENV } from '../../constants';
 const OidcLoginComponent = ({ setShowSignInModal }) => {
   const { login } = useSession();
   const SUGGESTED_OIDC_OPTIONS = ENV.VITE_SUGGESTED_OIDC_OPTIONS?.split(', ') || [
-    'http://localhost:3000/'
+    'https://opencommons.net/'
   ];
   const defaultOidc = ENV.VITE_SOLID_IDENTITY_PROVIDER || SUGGESTED_OIDC_OPTIONS[0];
   const [selectedOidcFromDropdown, setSelectedOidcFromDropdown] = useState(defaultOidc);
